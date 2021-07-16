@@ -1,0 +1,27 @@
+<template>
+  <p v-html="formattedText"></p>
+</template>
+
+<script>
+export default {
+  props: {
+    data: String
+  },
+  computed: {
+    formattedText () {
+      let text = this.data
+      text = text.replace(/(<([^>]+)>)/ig, '')
+      text = text.replace(/\[s\]/g, '<strong>')
+      text = text.replace(/\[\/s\]/g, '</strong>')
+      return text
+    }
+  }
+}
+</script>
+
+<style scoped>
+  p {
+    line-height: 1.61;
+    margin: 1em 0;
+  }
+</style>

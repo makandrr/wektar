@@ -1,0 +1,36 @@
+@import '~material-design-icons/iconfont/material-icons.css';
+@import "variables";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height:100%;
+  font-family: $main-font;
+  min-width: 410px;
+}
+
+html.overflow-hide {
+  overflow-x: hidden;
+}
+
+body {
+  min-height:100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-q strong {
+  color: #20B240;
+  font-weight: inherit;
+}

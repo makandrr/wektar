@@ -1,0 +1,39 @@
+@mixin choose-card($color, $disabled: 0) {
+  background-color: lighten($color, 14%);
+  box-shadow: 0 0 21px -3px darken($color, 6%);
+  border: 7px solid darken($color, 6%);
+  transition: 300ms all;
+  @if $disabled == 0 {
+    &:hover {
+      box-shadow: 0 0 21px 4px darken($color, 10%);
+      background-color: lighten($color, 18%);
+    }
+  }
+  @if $disabled == 1 {
+    &:hover {
+      opacity: 0.7;
+      & h3 {
+        color: #fff;
+        text-shadow: 0 0 2px #fff;
+      }
+    }
+  }
+}
+
+@mixin q-button($color) {
+  background-color: $color;
+  border: 4px solid darken($color, 10%);
+  //box-shadow: 0 0 6px 1px darken($color, 6%);
+  &:hover {
+    //box-shadow: 0 0 6px 3px darken($color, 10%);
+    background-color: lighten($color, 4%);
+    border: 4px solid darken($color, 4%);
+  }
+}
+
+@mixin step-color($color) {
+  background-color: $color;
+  &.active {
+    box-shadow: inset 0 0 0 3px lighten($color, 7%);
+  }
+}
