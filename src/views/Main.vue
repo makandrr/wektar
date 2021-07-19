@@ -5,7 +5,7 @@
     <strong class="or-label">ИЛИ</strong>
     <choose-card icon="practice" type="practice" sublabel="[В РАЗРАБОТКЕ]" disabled="true">Практиковаться</choose-card>
   </div>
-  <span class="version">0.0.1 alpha1</span>
+  <span class="version">0.0.1a alpha1</span>
 </template>
 
 <script>
