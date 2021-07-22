@@ -4,8 +4,8 @@
     <choose-card @clicked="goToLearning" icon="learn" type="learn">Учиться</choose-card>
     <strong class="or-label">ИЛИ</strong>
     <choose-card icon="practice" type="practice" sublabel="[В РАЗРАБОТКЕ]" disabled="true">Практиковаться</choose-card>
+    <span class="version">0.0.1b alpha1</span>
   </div>
-  <span class="version">0.0.1a alpha1</span>
 </template>
 
 <script>
@@ -29,8 +29,8 @@ export default {
 
   .main {
     min-height: 100%;
+    min-height: 100vh;
     background: linear-gradient(256.29deg, $practice-color 4.76%, $learn-color 94.34%);
-    flex: 1;
     padding: $vertical-padding $horizontal-padding;
     .logo {
       width: 200px;
@@ -44,8 +44,8 @@ export default {
     bottom: 0;
     color: #fff;
     font-size: 1.2em;
-    border-top: 3px dashed #ff8b8b;
-    border-left: 3px dashed #ff8b8b;
+    border-top: 3px solid #ba8787;
+    border-left: 3px solid #ba8787;
     padding: .3em;
     user-select: none;
   }
@@ -60,12 +60,13 @@ export default {
     color: #fff;
   }
 
-  @media(max-width: 1158px), (max-height: 695px) {
+  @media(max-width: 850px) {
     .main {
       display: flex;
       flex-direction: column;
       align-items: center;
       background-image: linear-gradient(0deg, $practice-color 4.76%, $learn-color 94.34%);
+      padding: $vertical-padding 0;
       .logo {
         margin-bottom: 50px;
       }
@@ -74,6 +75,14 @@ export default {
       position: static;
       transform: none;
       margin: 20px 0;
+    }
+    .version {
+      position: static;
+      font-size: 5em;
+      border: 3px solid #ba8787;
+      padding: .3em;
+      user-select: none;
+      margin-top: 1em;
     }
   }
 </style>

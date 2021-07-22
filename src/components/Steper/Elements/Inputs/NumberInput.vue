@@ -34,7 +34,7 @@ export default {
 <style scoped lang="scss">
   @import '../../../../scss/_variables.scss';
   div {
-    font-size: 1.6em;
+    font-size: 1.2em;
     display: flex;
     align-items: center;
     margin: .5em 0;

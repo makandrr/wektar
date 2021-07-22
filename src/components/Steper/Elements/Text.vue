@@ -24,4 +24,10 @@ export default {
     line-height: 1.61;
     margin: 1em 0;
   }
+
+  @media (max-width: 554px) {
+    p {
+      font-size: 1.25em;
+    }
+  }
 </style>

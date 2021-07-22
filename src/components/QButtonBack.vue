@@ -33,8 +33,15 @@ export default {
     }
 
     img {
-      width: 45px;
+      width: 8em;
       color: #fff;
+    }
+  }
+
+  @media (max-width: 900px) {
+    div {
+      width: 10em;
+      height: 10em;
     }
   }
 </style>

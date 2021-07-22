@@ -1,7 +1,7 @@
 <template>
   <div>
     <img src="../../../../assets/realLineArrow.png" style="display: none" id="realLineArrow" alt="">
-    <canvas :id="hashId" width="700" height="100"></canvas>
+    <canvas class="canvas" :id="hashId" width="700" height="100"></canvas>
   </div>
 </template>
 
@@ -22,7 +22,8 @@ export default {
     paper.install(window)
     const canvas = document.getElementById(this.hashId)
     paper.setup(canvas)
-
+    canvas.style.width = '100%'
+    canvas.style.height = canvas.getBoundingClientRect().width / 7 + 'px'
     const canvasWidth = 700
     const canvasHeight = 100
     const lineLength = 600
@@ -118,4 +119,5 @@ div {
   display: flex;
   justify-content: center;
 }
+
 </style>

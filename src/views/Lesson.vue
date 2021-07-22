@@ -1,6 +1,5 @@
 <template>
   <div class="lesson">
-    <q-button-back></q-button-back>
     <div class="stepList">
       <step-button
         v-for="(step, index) in steps"
@@ -29,12 +28,11 @@
 </template>
 
 <script>
-import QButtonBack from '../components/QButtonBack'
 import StepButton from '../components/StepButton'
 import Step from '../components/Steper/Step'
 
 export default {
-  components: { Step, StepButton, QButtonBack },
+  components: { Step, StepButton },
   data () {
     return {
       steps: this.getSteps().steps,
@@ -72,6 +70,7 @@ export default {
         this.multiStepId++
         this.$router.replace({ query: { currentStepId: this.currentStepId, multiStepId: this.multiStepId } })
         this.generateNewTaskKey()
+        window.scrollTo(0, 0)
       }
     },
     prevMultiStep () {
@@ -79,22 +78,26 @@ export default {
         this.multiStepId--
         this.$router.replace({ query: { currentStepId: this.currentStepId, multiStepId: this.multiStepId } })
         this.generateNewTaskKey()
+        window.scrollTo(0, 0)
       }
     },
     generalNextStep () {
       if (this.isMultiStep && this.multiStepId + 1 < this.multiStepAmount) {
         this.nextMultiStep()
         this.generateNewTaskKey()
+        window.scrollTo(0, 0)
       } else {
         this.currentStepId++
         this.generateNewTaskKey()
         this.multiStepId = 0
+        window.scrollTo(0, 0)
       }
       this.$router.replace({ query: { currentStepId: this.currentStepId, multiStepId: this.multiStepId } })
     },
     switchToStep (index) {
       this.currentStepId = index
       this.multiStepId = 0
+      window.scrollTo(0, 0)
       this.$router.replace({ query: { currentStepId: this.currentStepId, multiStepId: this.multiStepId } })
     }
   },
@@ -156,22 +159,23 @@ export default {
 
   .lesson {
     flex: 1;
+    min-height: 100%;
+    min-height: 100vh;
     background-color: $learn-color;
     padding: $pages-vertical-padding 20%;
 
     @media (max-width: 820px) {
       padding: $pages-vertical-padding 10%;
-      font-size: 0.8em;
+      font-size: 1.7em;
     }
 
     @media (max-width: 554px) {
       padding: $pages-vertical-padding 5%;
-      font-size: 0.6em;
+      font-size: 3.1em;
     }
 
     @media (max-width: 418px) {
       padding: $pages-vertical-padding 3%;
-      font-size: 0.5em;
     }
 
     .stepList {

@@ -1,6 +1,5 @@
 <template>
   <div class="block-choose-list">
-    <q-button-back></q-button-back>
     <h2>{{ getBlock().name }}</h2>
     <ul>
       <topic-choose-element :blockname="getBlock().pageName" :key="index" v-for="(topic, index) in topics" :number="index" :name="topic.name"></topic-choose-element>
@@ -9,11 +8,10 @@
 </template>
 
 <script>
-import QButtonBack from '../components/QButtonBack'
 import TopicChooseElement from '../components/TopicChooseElement'
 export default {
   name: 'TopicChoose',
-  components: { QButtonBack, TopicChooseElement },
+  components: { TopicChooseElement },
   data () {
     return {
       topics: this.getBlock().content
@@ -43,13 +41,12 @@ export default {
     text-align: center;
     color: #fff;
     font-weight: 600;
-    font-size: 3em;
+    font-size: 4em;
     user-select: none;
   }
-
-  @media (max-width: 900px) {
+  @media (max-width: 600px) {
     h2 {
-      font-size: 1.7em;
+      font-size: 8em;
     }
   }
   ul {

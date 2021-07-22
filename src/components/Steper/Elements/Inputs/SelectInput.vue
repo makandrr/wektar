@@ -28,7 +28,7 @@ export default {
 <style scoped lang="scss">
 @import '../../../../scss/_variables.scss';
 div {
-  font-size: 1.6em;
+  font-size: 1.4em;
   display: flex;
   align-items: center;
   margin: .5em 0;
@@ -44,5 +44,18 @@ div {
       border-color: $learn-color;
     }
   }
+
+  @media (max-width: 820px) {
+    font-size: 1em;
+  }
+
+  @media (max-width: 554px) {
+    font-size: 1.4em;
+  }
+
+  @media (max-width: 418px) {
+    font-size: 1.1em;
+  }
 }
+
 </style>

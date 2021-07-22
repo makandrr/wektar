@@ -9,9 +9,10 @@
 }
 
 html {
-  height:100%;
+  min-height: 100vh;
   font-family: $main-font;
-  min-width: 410px;
+  min-width: 220px;
+  font-size: 1.1vw;
 }
 
 html.overflow-hide {
@@ -20,14 +21,17 @@ html.overflow-hide {
 
 body {
   min-height:100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-width: 220px;
 }
 
 #app {
-  flex: 1;
   display: flex;
   flex-direction: column;
+  min-height: 100%;
+  min-height: 100vh;
 }
 
 .title-q strong {

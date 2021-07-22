@@ -25,6 +25,11 @@ export default {
 
     const canvasWidth = 700
     const canvasHeight = 100
+    canvas.style.width = '100%'
+    window.onresize = () => {
+      canvas.style.height = canvas.getBoundingClientRect().width / 7 + 'px'
+    }
+    window.onresize()
     const lineLength = 600
     const lineWidth = 4
     const leftPadding = canvasWidth / 2 - lineLength / 2
@@ -70,8 +75,5 @@ export default {
   div {
     display: flex;
     justify-content: center;
-  }
-  canvas {
-    width: 90%;
   }
 </style>

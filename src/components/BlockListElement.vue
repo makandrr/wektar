@@ -37,7 +37,6 @@ export default {
 <style scoped lang="scss">
   li.elem {
     list-style-type: none;
-    font-size: 1rem;
     background-color: #DEDEDE;
     padding: 1.4em 1.8em;
     h3 {
@@ -72,7 +71,7 @@ export default {
       align-items: center;
       transition: 200ms all;
       user-select: none;
-      border: 5px solid #1a7318;
+      border: .3em solid #1a7318;
       img {
         width: 2em;
       }
@@ -117,7 +116,17 @@ export default {
 
   @media (max-width: 900px) {
     li.elem {
-      font-size: 0.65rem;
+      font-size: 1.7em;
+    }
+
+    p, ul {
+      font-size: 1.7em !important;
+    }
+  }
+
+  @media (max-width: 500px) {
+    li.elem {
+      font-size: 2em;
     }
   }
 </style>

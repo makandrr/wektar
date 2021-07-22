@@ -1,6 +1,5 @@
 <template>
   <div class="block-choose-list">
-    <q-button-back></q-button-back>
     <h2>Выберите блок</h2>
     <ul>
       <block-list-element
@@ -17,11 +16,10 @@
 </template>
 
 <script>
-import QButtonBack from '../components/QButtonBack'
 import BlockListElement from '../components/BlockListElement'
 export default {
   name: 'BlockChooseList',
-  components: { BlockListElement, QButtonBack },
+  components: { BlockListElement },
   data () {
     return {
       blocks: [
@@ -43,15 +41,16 @@ export default {
       text-align: center;
       color: #fff;
       font-weight: 600;
-      font-size: 3em;
       user-select: none;
+      font-size: 4em;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 600px) {
       h2 {
-        font-size: 1.7em;
+        font-size: 8em;
       }
     }
+
     ul {
       margin-top: 3em;
       max-width: 1000px;

@@ -8,6 +8,11 @@
     font-weight: 700;
     margin-bottom: .6em;
   }
+  @media (max-width: 500px) {
+    h2 {
+      font-size: 1.75em;
+    }
+  }
 </style>
 
 <script>

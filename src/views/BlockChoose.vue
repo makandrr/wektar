@@ -1,5 +1,4 @@
 <template>
-  <q-button-back></q-button-back>
   <div class="block-choose">
     <h2>Выберите блок</h2>
     <div class="blocks" ref="blocksContainer" :style="{marginLeft: containerMarginLeft}">

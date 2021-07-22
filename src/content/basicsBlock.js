@@ -74,8 +74,11 @@ export default {
               { type: 'text', content: '$$3(5+2)=3\\cdot 5+3\\cdot 2=15+6=21$$' },
               { type: 'text', content: '$$3(5+2)=3\\cdot 7=21$$' },
               { type: 'text', content: 'Также вместо числа \\(a\\) можно подставить сумму:' },
-              { type: 'text', content: '$$(1+2)(5+2)=(1+2)5+(1+2)2=3\\cdot 5+3\\cdot 2=15+6=21$$' },
-              { type: 'text', content: '$$(1+2)(5+2)=3\\cdot 7=21$$' },
+              { type: 'text', content: '$$(1+2)(5+2)=$$' },
+              { type: 'text', content: '$$=(1+2)5+(1+2)2=$$' },
+              { type: 'text', content: '$$=1\\cdot 5 + 2\\cdot 5 + 1\\cdot 2 + 2\\cdot 2=$$' },
+              { type: 'text', content: '$$=(1+2)5+(1+2)2=$$' },
+              { type: 'text', content: '$$(1+2)(5+2)=3\\cdot7=21$$' },
               { type: 'text', content: 'Как можно увидеть, результаты получаются одинаковые.' },
               { type: 'text', content: 'В данном случае \\(a=1+2\\), \\(b=5\\) и \\(c=2\\). Но почему данное свойство так работает? Попробую объяснить' },
               { type: 'text', content: 'Допустим мы пишем:' },
@@ -89,9 +92,18 @@ export default {
               { type: 'text', content: 'А так как многократное складывание одного числа можно выразить умножением, то можно написать это так(скобки я ставлю лишь для удобства, без них умножение было бы все равно первым):' },
               { type: 'text', content: '$$(3\\cdot 3)+(3\\cdot 4)$$' },
               { type: 'text', content: 'Таким образом мы пришли к варианту который получился бы у нас при использовании распределительного свойства. Теперь рассмотрим ещё пару важных примеров использования данного свойства.' },
-              { type: 'text', content: '$$2(x+3)=2\\cdot x+2\\cdot 3=2x+6$$' },
-              { type: 'text', content: '$$(2+4)3=3(2+4)=3\\cdot 2+3\\cdot 4=6+12=18$$' },
-              { type: 'text', content: '$$(a+b)(c+d)=(a+b)c+(a+b)d=ac+bc+ad+db$$' },
+              { type: 'text', content: '$$2(x+3)=$$' },
+              { type: 'text', content: '$$=2\\cdot x+2\\cdot 3$$' },
+              { type: 'text', content: '$$=2x+6$$' },
+              { type: 'margin', content: {} },
+              { type: 'text', content: '$$(2+4)3$$' },
+              { type: 'text', content: '$$=3(2+4)$$' },
+              { type: 'text', content: '$$=3\\cdot 2+3\\cdot 4$$' },
+              { type: 'text', content: '$$=6+12=18$$' },
+              { type: 'margin', content: '' },
+              { type: 'text', content: '$$(a+b)(c+d)$$' },
+              { type: 'text', content: '$$=(a+b)c+(a+b)d$$' },
+              { type: 'text', content: '$$=ac+bc+ad+db$$' },
               { type: 'text', content: 'В последнем примере вы можете увидеть что при первом использовании распределительного свойства получилась сумма \\((a+b)c+(a+b)d\\) в которой к слагаемым \\((a+b)c\\) и \\((a+b)d\\) было также применено распределительное свойство.' }
             ]
           },
@@ -133,7 +145,9 @@ export default {
               { type: 'text', content: '$$-(a-b)=-a+b=b-a$$' },
               { type: 'text', content: 'Все эти свойства используются для преобразования выражений, что может быть нужно для совершенно разных целей. Вот примеры использования' },
               { type: 'text', content: '$$-(a+10)=-a-10$$' },
-              { type: 'text', content: '$$-(a+b-c)=-a-b-(-c)=-a-b+c$$' },
+              { type: 'margin', content: '' },
+              { type: 'text', content: '$$-(a+b-c)=$$' },
+              { type: 'text', content: '$$-a-b-(-c)=-a-b+c$$' },
               { type: 'text', content: 'Рекомендую разбирать все примеры вплоть до мельчайших деталей того как одно выражение преобразуется в другое.' }
             ]
           },
@@ -191,7 +205,10 @@ export default {
               { type: 'main-title', content: '[Сложите] дроби' },
               { type: 'text', content: '$$\\frac{3}{10}+\\frac{4}{15}$$' }
             ],
-            correctAnswer: '$$\\frac{3}{10}+\\frac{4}{15}=\\frac{3 \\cdot 3}{10 \\cdot 3}+\\frac{4 \\cdot 2}{15 \\cdot 2}=\\frac{9}{30}+\\frac{8}{30}=\\frac{17}{30}$$'
+            correctAnswer: [
+              { type: 'text', content: '$$\\frac{3}{10}+\\frac{4}{15}=\\frac{3 \\cdot 3}{10 \\cdot 3}+\\frac{4 \\cdot 2}{15 \\cdot 2}$$' },
+              { type: 'text', content: '$$=\\frac{9}{30}+\\frac{8}{30}=\\frac{17}{30}$$' }
+            ]
           },
           {
             type: 'article',
@@ -439,7 +456,9 @@ export default {
               { type: 'text', content: 'Мы знаем что число \\(b\\) больше пяти, соответственно оно и больше двух, и если его вычесть из двойки, то получится отрицательное число. Исходя из этого, выражение \\(2-b\\) даст нам отрицательное число, на которое мы можем применить вышеописанное правило модуля:' },
               { type: 'text', content: '$$|2-b|=-(2-b)$$' },
               { type: 'text', content: 'Выражение \\(-(2-b)\\) означает что мы умножаем отрицательную единицу на \\(2-b\\), и можем записать это так: \\(-1(2-b)\\), и после этого воспользоваться свойством дистрибутивности:' },
-              { type: 'text', content: '$$-(2-b)=-1(2-b)=(-1)2-(-1)b=-2-(-b)=-2+b=b-2$$' },
+              { type: 'text', content: '$$-(2-b)=-1(2-b)=$$' },
+              { type: 'text', content: '$$(-1)2-(-1)b=$$' },
+              { type: 'text', content: '$$-2-(-b)=-2+b=b-2$$' },
               { type: 'text', content: '$$|2-b|=b-2, b > 5$$' }
             ]
           },
@@ -509,7 +528,8 @@ export default {
               { type: 'text', content: 'Мы легко можем сказать, какое расстояние от некого числа \\(a\\) до нуля, оно равно \\(|a|\\). Но что делать, если нам надо найти расстояние от числа \\(4\\) не до нуля, а до единицы. Если подумать, можно понять, что это расстояние будет на единицу меньше чем до нуля, то есть \\(3\\). Есть универсальная формула расстояния между некоторыми точками \\(a\\) и \\(b\\) на координатной прямой:' },
               { type: 'text', content: '$$d(a,b)=|b-a|$$' },
               { type: 'text', content: 'То есть надо вычесть второе число из первого и взять модуль из разницы. Теперь вы можете найти расстояние между любыми двумя точками на прямой, на пример, между точками \\(-12\\) и \\(17\\):' },
-              { type: 'text', content: '$$|17-(-12)|=|17+12|=|29|=29$$' },
+              { type: 'text', content: '$$|17-(-12)|=|17+12|=$$' },
+              { type: 'text', content: '$$|29|=29$$' },
               { type: 'text', content: 'Но я не советую слепо использовать эту формулу, я настоятельно рекомендую внимательно рассмотреть то, как она работает, почему она написана именно так, а не иначе. Только таким образом вы сможете поистине понимать математику. Попробуйте убрать модуль и попробовать подставить числа, что изменится? Почему? Почему формула работает? На текущем этапе это легко понять путём логических рассуждений, без долгих доказательств.' }
             ]
           },
@@ -735,7 +755,11 @@ export default {
                   { type: 'main-title', content: '[Используйте] свойства чисел для записи выражения без скобок' },
                   { type: 'text', content: '$$\\frac{3}{7}(a+7+b)$$' }
                 ],
-                correctAnswer: '$$\\frac{3}{7}(a+7+b)=\\frac{3a}{7}+\\frac{3\\cdot 7}{7}+\\frac{3b}{7}=\\frac{3a}{7}+3+\\frac{3b}{7}$$'
+                correctAnswer: [
+                  { type: 'text', content: '$$\\frac{3}{7}(a+7+b)=$$' },
+                  { type: 'text', content: '$$\\frac{3a}{7}+\\frac{3\\cdot 7}{7}+\\frac{3b}{7}=$$' },
+                  { type: 'text', content: '$$\\frac{3a}{7}+3+\\frac{3b}{7}$$' }
+                ]
               },
               {
                 type: 'task',
@@ -758,7 +782,7 @@ export default {
               {
                 type: 'task',
                 content: [
-                  { type: 'main-title', content: 'Вычислите выражение' },
+                  { type: 'main-title', content: '[Вычислите] выражение' },
                   { type: 'text', content: '$$\\frac{3}{4}+\\frac{7}{8}$$' }
                 ],
                 correctAnswer: [
@@ -1020,7 +1044,10 @@ export default {
                   { type: 'text', content: '$$C = \\{ -4,-1,0,3,5,6,7 \\}$$' },
                   { type: 'text', content: '$$A \\cup C=?$$' }
                 ],
-                correctAnswer: '$$A \\cup C = \\{ -4, -1, 0, 2,3,4,5,6,7,8,9,10 \\}$$'
+                correctAnswer: [
+                  { type: 'text', content: '$$A \\cup C =$$' },
+                  { type: 'text', content: '$$ \\{ -4, -1, 0, 2,3,4,5,6,7,8,9,10 \\}$$' }
+                ]
               },
               {
                 type: 'task',
@@ -1064,7 +1091,10 @@ export default {
                   { type: 'text', content: '$$C = \\{ -4,-1,0,3,5,6,7 \\}$$' },
                   { type: 'text', content: '$$A \\cup B \\cup C=?$$' }
                 ],
-                correctAnswer: '$$A \\cup B \\cup C = \\{ -4, -1, 0, 2,3,4,5,6,7,8,9,10,11,12 \\}$$'
+                correctAnswer: [
+                  { type: 'text', content: '$$A \\cup B \\cup C = $$' },
+                  { type: 'text', content: '$$\\{ -4, -1, 0, 2,3,4,5,6,7,8,9,10,11,12\\}$$' }
+                ]
               },
               {
                 type: 'task',
@@ -1304,7 +1334,10 @@ export default {
                   { type: 'text', content: '$$|d-10|$$' },
                   { type: 'text', content: '$$d < 4$$' }
                 ],
-                correctAnswer: '$$|d-10|=-(d-10)=-d-(-10)=-d+10=10-d$$'
+                correctAnswer: [
+                  { type: 'text', content: '$$|d-10|=-(d-10)=$$' },
+                  { type: 'text', content: '$$-d-(-10)=-d+10=10-d$$' }
+                ]
               },
               {
                 type: 'task',
@@ -1321,7 +1354,12 @@ export default {
                   { type: 'main-title', content: '[Вычислите] выражение' },
                   { type: 'text', content: '$$|4-|7 - 10||(-2)$$' }
                 ],
-                correctAnswer: '$$|4-|7 - 10||(-2)=|4-|-3||(-2)=|4-3|(-2)=|1|(-2)=1\\cdot (-2) = -2$$'
+                correctAnswer: [
+                  { type: 'text', content: '$$|4-|7 - 10||(-2)=$$' },
+                  { type: 'text', content: '$$|4-|-3||(-2)=$$' },
+                  { type: 'text', content: '$$|4-3|(-2)=|1|(-2)=$$' },
+                  { type: 'text', content: '$$1\\cdot (-2) = -2$$' }
+                ]
               },
               {
                 type: 'task',
@@ -1354,8 +1392,8 @@ export default {
                   { type: 'text', content: '$$\\frac{1}{2} и \\frac{4}{3}$$' }
                 ],
                 correctAnswer: [
-                  { type: 'text', content: '$$|\\frac{4}{3}-\\frac{1}{2}|=$$' },
-                  { type: 'text', content: '=$$|\\frac{8}{6}-\\frac{3}{6}|=$$' },
+                  { type: 'text', content: '$$|\\frac{4}{3}-\\frac{1}{2}|$$' },
+                  { type: 'text', content: '$$=|\\frac{8}{6}-\\frac{3}{6}|$$' },
                   { type: 'text', content: '$$=\\frac{5}{6}$$' }
                 ]
               }

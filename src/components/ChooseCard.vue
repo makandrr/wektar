@@ -33,8 +33,8 @@ export default {
   @import "../scss/mixins";
 
   .card {
-    width: 337px;
-    height: 450px;
+    width: 21em;
+    height: 28em;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -43,23 +43,7 @@ export default {
     color: #fff;
     cursor: pointer;
     .icon {
-      width: 208px;
-    }
-  }
-
-  @media(max-width: 1158px), (max-height: 695px) {
-    .card {
-      position: static;
-    }
-  }
-
-  @media(max-width: 500px) {
-    .card {
-      width: 280px;
-      height: 360px;
-      .icon {
-        width: 160px;
-      }
+      width: 15em;
     }
   }
 
@@ -71,9 +55,6 @@ export default {
     @include choose-card($learn-color);
     bottom: $vertical-padding;
     left: $horizontal-padding;
-    h2 {
-      font-size: 34px;
-    }
   }
 
   .card.practice {
@@ -94,5 +75,29 @@ export default {
       margin-top: 10px;
       color: #C3D1FF;
     }
+  }
+
+  @media(max-width: 850px) {
+    .card {
+      position: static;
+      margin: 0;
+    }
+    .card {
+      width: 60em;
+      height: 80em;
+      .icon {
+        width: 40em;
+      }
+      h2 {
+        font-size: 6.5em;
+      }
+    }
+    .card.practice h2 {
+      font-size: 5.3em;
+    }
+    .card.practice h3 {
+      font-size: 3.4em;
+    }
+
   }
 </style>

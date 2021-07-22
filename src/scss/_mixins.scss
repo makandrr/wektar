@@ -22,12 +22,16 @@
 
 @mixin q-button($color) {
   background-color: $color;
-  border: 4px solid darken($color, 10%);
+  border: .2em solid darken($color, 10%);
   //box-shadow: 0 0 6px 1px darken($color, 6%);
   &:hover {
     //box-shadow: 0 0 6px 3px darken($color, 10%);
     background-color: lighten($color, 4%);
-    border: 4px solid darken($color, 4%);
+    border: .2em solid darken($color, 4%);
+  }
+
+  @media (max-width: 500px) {
+    padding: 0 7px;
   }
 }
 
