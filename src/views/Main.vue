@@ -4,7 +4,7 @@
     <choose-card @clicked="goToLearning" icon="learn" type="learn">Учиться</choose-card>
     <strong class="or-label">ИЛИ</strong>
     <choose-card icon="practice" type="practice" sublabel="[В РАЗРАБОТКЕ]" disabled="true">Практиковаться</choose-card>
-    <span class="version">0.0.1b alpha1</span>
+    <span class="version">0.0.1c alpha1</span>
   </div>
 </template>
 
@@ -48,6 +48,7 @@ export default {
     border-left: 3px solid #ba8787;
     padding: .3em;
     user-select: none;
+    background-color: rgba(0,0,0,0.5);
   }
 
   .or-label {

@@ -132,7 +132,7 @@ export default {
           {
             type: 'article',
             content: [
-              { type: 'main-title', content: 'Сложение и вычитание' },
+              { type: 'main-title', content: '[Сложение] и [вычитание]' },
               { type: 'text', content: 'Теперь немного поговорим о сложении и вычитании. В частности о числе \\(0\\). При сложении нуля с любым другим числом, результат остаётся тем же числом: \\(0+a=a\\), где \\(a\\)-любое число.' },
               { type: 'text', content: 'Любое число \\(a\\) имеет обратное ему \\(-a\\). Например если \\(a=3\\) то \\(-a=-3\\), а если \\(a=-5\\) то \\(-a=5\\). То есть знак минуса меняет знак на противоположный. Для обратных чисел мы можем сказать что \\(a+(-a)=0\\). Всё потому что прибавление отрицательного числа к положительному, или наоборот, является вычитанием. Вычитание это обратное действие сложению.' },
               { type: 'text', content: '$$a-b=a+(-b)$$' },
@@ -178,7 +178,7 @@ export default {
           {
             type: 'article',
             content: [
-              { type: 'main-title', content: 'Умножение и деление' },
+              { type: 'main-title', content: '[Умножение] и [деление]' },
               { type: 'text', content: 'Теперь поговорим об умножении и делении. При умножении любого числа на \\(1\\), число остаётся прежним: \\(a\\cdot 1=a\\). Любое число \\(a\\) кроме нуля имеет обратное ему значение \\(\\frac{1}{a}\\), которое удовлетворяет \\(a\\cdot\\frac{1}{a}=1\\). Деление является обратным к умножению. Что поделить число \\(a\\) на число \\(b\\) мы можем умножить число \\(a\\) на \\(\\frac{1}{b}\\):' },
               { type: 'text', content: '$$a\\div b=a\\cdot \\frac{1}{b}$$' },
               { type: 'text', content: 'Выражение \\(a\\cdot \\frac{1}{b}\\) мы можем записывать как \\(\\frac{a}{b}\\). Ссылаясь на \\(\\frac{a}{b}\\) мы говорим что это [s]отношение[/s] \\(a\\) к \\(b\\) или деление \\(a\\) на \\(b\\). Число \\(a\\) мы называем [s]числителем[/s], \\(b\\) [s]знаменателем[/s]' },
@@ -234,7 +234,7 @@ export default {
           {
             type: 'article',
             content: [
-              { type: 'main-title', content: 'Множества и интервалы' },
+              { type: 'main-title', content: '[Множества] и [интервалы]' },
               { type: 'text', content: 'Множество это коллекция объектов, которые мы называем [s]элементами множества[/s]. Если \\(S\\) это множество, то запись \\(a \\in S\\) означает что \\(a\\) является элементом множества \\(S\\). А \\(b \\notin S\\) означает что \\(b\\) не является элементом множества \\(S\\). Например, если множество \\(Z\\) содержит все целые числа, то \\(-5\\in Z\\), но \\(7.645 \\notin Z\\). Некоторые множества могут быть описаны перечислением их элементов. Например, скажем, что множество \\(A\\) содержит все натуральные числа меньше семи:' },
               { type: 'text', content: '$$A = \\{1,2,3,4,5,6\\}$$' },
               { type: 'text', content: 'Если \\(A\\) и \\(B\\) это некоторые множества, то \\(A \\cup B\\) означает объединение данных множеств. То есть во множестве \\(С=A \\cup B\\) будут находиться элементы обоих множеств. А вот \\(A\\cap B\\) означает пересечение множеств, значит множество \\(D=A\\cap B\\) будет иметь только те элементы, которые находятся в обоих множествах. Также есть знак \\(\\varnothing \\) который означает пустое множество. Проще будет понять на примере:' },
@@ -512,7 +512,7 @@ export default {
           {
             type: 'article',
             content: [
-              { type: 'main-title', content: 'Свойства модуля' },
+              { type: 'main-title', content: 'Свойства [модуля]' },
               { type: 'text', content: 'При работе с модулями, верны следующие свойства:' },
               { type: 'text', content: '1. Результат модуля всегда положительный: \\(|a|\\geqslant 0\\)' },
               { type: 'text', content: '2. Некое число и противоположное ему всегда имеют одинаковый модуль: \\(|a|=|-a|\\)' },
@@ -795,7 +795,7 @@ export default {
               {
                 type: 'task',
                 content: [
-                  { type: 'main-title', content: 'Вычислите выражение' },
+                  { type: 'main-title', content: '[Вычислите] выражение' },
                   { type: 'text', content: '$$\\frac{1}{5}+\\frac{1}{8}$$' }
                 ],
                 correctAnswer: [
@@ -808,7 +808,7 @@ export default {
               {
                 type: 'task',
                 content: [
-                  { type: 'main-title', content: 'Вычислите выражение' },
+                  { type: 'main-title', content: '[Вычислите] выражение' },
                   { type: 'text', content: '$$\\frac{1}{7}-\\frac{2}{5}$$' }
                 ],
                 correctAnswer: [
@@ -823,7 +823,7 @@ export default {
               {
                 type: 'task',
                 content: [
-                  { type: 'main-title', content: 'Вычислите выражение' },
+                  { type: 'main-title', content: '[Вычислите] выражение' },
                   { type: 'text', content: '$$2-\\frac{3}{8}+\\frac{4}{9}$$' }
                 ],
                 correctAnswer: [
@@ -838,7 +838,7 @@ export default {
               {
                 type: 'task',
                 content: [
-                  { type: 'main-title', content: 'Вычислите выражение' },
+                  { type: 'main-title', content: '[Вычислите] выражение' },
                   { type: 'text', content: '$$\\frac{1}{2}(\\frac{1}{4}+3)$$' }
                 ],
                 correctAnswer: [
@@ -855,7 +855,7 @@ export default {
               {
                 type: 'task',
                 content: [
-                  { type: 'main-title', content: 'Вычислите выражение' },
+                  { type: 'main-title', content: '[Вычислите] выражение' },
                   { type: 'text', content: '$$\\frac{\\frac{1}{2}+\\frac{3}{5}}{2-\\frac{3}{4}}$$' }
                 ],
                 correctAnswer: [
@@ -1038,7 +1038,7 @@ export default {
               {
                 type: 'task',
                 content: [
-                  { type: 'main-title', content: '[Найди] объединение множеств' },
+                  { type: 'main-title', content: '[Найдите] объединение множеств' },
                   { type: 'text', content: '$$A = \\{ 2,3,4,5,6,7,8,9,10 \\}$$' },
                   { type: 'text', content: '$$B=\\{ 10,11,12 \\}$$' },
                   { type: 'text', content: '$$C = \\{ -4,-1,0,3,5,6,7 \\}$$' },
@@ -1052,7 +1052,7 @@ export default {
               {
                 type: 'task',
                 content: [
-                  { type: 'main-title', content: '[Найди] пересечение множеств' },
+                  { type: 'main-title', content: '[Найдите] пересечение множеств' },
                   { type: 'text', content: '$$A = \\{ 2,3,4,5,6,7,8,9,10 \\}$$' },
                   { type: 'text', content: '$$B=\\{ 10,11,12 \\}$$' },
                   { type: 'text', content: '$$C = \\{ -4,-1,0,3,5,6,7 \\}$$' },
@@ -1063,7 +1063,7 @@ export default {
               {
                 type: 'task',
                 content: [
-                  { type: 'main-title', content: '[Найди] пересечение множеств' },
+                  { type: 'main-title', content: '[Найдите] пересечение множеств' },
                   { type: 'text', content: '$$A = \\{ 2,3,4,5,6,7,8,9,10 \\}$$' },
                   { type: 'text', content: '$$B=\\{ 10,11,12 \\}$$' },
                   { type: 'text', content: '$$C = \\{ -4,-1,0,3,5,6,7 \\}$$' },
@@ -1074,7 +1074,7 @@ export default {
               {
                 type: 'task',
                 content: [
-                  { type: 'main-title', content: '[Найди] объединение множеств' },
+                  { type: 'main-title', content: '[Найдите] объединение множеств' },
                   { type: 'text', content: '$$A = \\{ 2,3,4,5,6,7,8,9,10 \\}$$' },
                   { type: 'text', content: '$$B=\\{ 10,11,12 \\}$$' },
                   { type: 'text', content: '$$C = \\{ -4,-1,0,3,5,6,7 \\}$$' },
@@ -1085,7 +1085,7 @@ export default {
               {
                 type: 'task',
                 content: [
-                  { type: 'main-title', content: '[Найди] объединение множеств' },
+                  { type: 'main-title', content: '[Найдите] объединение множеств' },
                   { type: 'text', content: '$$A = \\{ 2,3,4,5,6,7,8,9,10 \\}$$' },
                   { type: 'text', content: '$$B=\\{ 10,11,12 \\}$$' },
                   { type: 'text', content: '$$C = \\{ -4,-1,0,3,5,6,7 \\}$$' },
@@ -1099,7 +1099,7 @@ export default {
               {
                 type: 'task',
                 content: [
-                  { type: 'main-title', content: '[Найди] пересечение множеств' },
+                  { type: 'main-title', content: '[Найдите] пересечение множеств' },
                   { type: 'text', content: '$$A = \\{ 2,3,4,5,6,7,8,9,10 \\}$$' },
                   { type: 'text', content: '$$B=\\{ 10,11,12 \\}$$' },
                   { type: 'text', content: '$$C = \\{ -4,-1,0,3,5,6,7 \\}$$' },
