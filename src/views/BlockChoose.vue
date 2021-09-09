@@ -1,4 +1,5 @@
 <template>
+  <DarkModeToggle></DarkModeToggle>
   <div class="block-choose">
     <h2>Выберите блок</h2>
     <div class="blocks" ref="blocksContainer" :style="{marginLeft: containerMarginLeft}">
@@ -23,13 +24,13 @@
       </div>
     </div>
   </div>
-  <q-button color="glow" class="howtolearnbutton" v-if="false">Как учиться?</q-button>
 </template>
 
 <script>
 import BlocksChooseBlock from '../components/BlocksChooseBlock'
+import DarkModeToggle from '../components/DarkModeToggle'
 export default {
-  components: { BlocksChooseBlock },
+  components: { BlocksChooseBlock, DarkModeToggle },
   mounted () {
     document.documentElement.classList.add('overflow-hide')
 
@@ -95,6 +96,7 @@ export default {
 <style scoped lang="scss">
   @import '../scss/_variables.scss';
   .block-choose {
+    transition: 300ms all;
     flex: 1;
     background-color: $learn-color;
     padding: $pages-vertical-padding 0;
@@ -126,7 +128,7 @@ export default {
   .blocks {
     display: flex;
     flex-shrink: 0;
-    margin-top: 30px;
+    margin-top: 1em;
     transition: 300ms all;
     //position: absolute;
     & > * {
@@ -140,7 +142,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 1em;
   }
   .slider-control {
     display: flex;
@@ -149,7 +151,7 @@ export default {
       margin: 0 60px;
     }
     img {
-      width: 50px;
+      width: 3.5em;
       cursor: pointer;
       transition: 100ms all;
       &.right {
@@ -164,11 +166,5 @@ export default {
         opacity: 0.4;
       }
     }
-  }
-
-  .howtolearnbutton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
   }
 </style>

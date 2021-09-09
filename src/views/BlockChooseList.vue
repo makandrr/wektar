@@ -1,4 +1,5 @@
 <template>
+  <DarkModeToggle></DarkModeToggle>
   <div class="block-choose-list">
     <h2>Выберите блок</h2>
     <ul>
@@ -17,9 +18,10 @@
 
 <script>
 import BlockListElement from '../components/BlockListElement'
+import DarkModeToggle from '../components/DarkModeToggle'
 export default {
   name: 'BlockChooseList',
-  components: { BlockListElement },
+  components: { BlockListElement, DarkModeToggle },
   data () {
     return {
       blocks: [
@@ -53,7 +55,7 @@ export default {
 
     ul {
       margin-top: 3em;
-      max-width: 1000px;
+      max-width: 70em;
       margin-left: auto;
       margin-right: auto;
       li + li {

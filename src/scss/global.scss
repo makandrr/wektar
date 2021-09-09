@@ -27,6 +27,81 @@ body {
   min-width: 220px;
 }
 
+body {
+  #lesson, #step-container, .step.article, .step.task, .topic-choose-list, .topic-choose-element, .topic-choose-element h3 {
+    transition: 200ms all;
+  }
+}
+
+body.dark {
+  #lesson {
+    background-color: darken($learn-color, 18%);
+  }
+
+  #step-container {
+    background-color: darken($white-soft-color, 75%);
+    color: $white-soft-color;
+  }
+
+  .step.article {
+    background-color: darken($step-text-color, 19%);
+  }
+
+  .step.task {
+    background-color: darken($step-task-color, 19%) !important;
+  }
+
+  .topic-choose-list {
+    background-color: darken($learn-color, 18%);
+  }
+
+  .topic-choose-element {
+    background-color: darken($white-soft-color, 75%);
+    h3 {
+      .number {
+          color: #eee;
+      }
+      .name {
+        color: #ccc;
+      }
+    }
+  }
+
+  .amounter-button {
+    fill: #fff !important;
+  }
+
+  .block-choose {
+    background-color: darken($learn-color, 18%);
+  }
+
+  .block-choose-block {
+    background-color: darken($white-soft-color, 75%);
+    color: $white-soft-color;
+    h3 span.id {
+      color: #fff;
+    }
+    h3 span.name {
+      color: darken($white-soft-color, 10%);
+    }
+  }
+
+  .block-choose-list {
+    background-color: darken($learn-color, 18%);
+  }
+
+  .block-list-element {
+    background-color: darken($white-soft-color, 75%);
+    color: #eee;
+    h3 .name {
+      color: #ddd;
+    }
+    .expand {
+      fill: $white-soft-color !important;
+    }
+  }
+}
+
 #app {
   display: flex;
   flex-direction: column;

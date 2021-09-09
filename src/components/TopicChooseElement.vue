@@ -1,5 +1,5 @@
 <template>
-  <li class="elem">
+  <li class="elem topic-choose-element">
     <div class="preview">
       <h3><span class="number">ТЕМА {{ number }}</span> <span class="name">{{ name }}</span></h3>
       <div class="open" @click="$router.push(`/${blockname}/${number}`)"><img src="../assets/icons/play.svg" alt="Открыть"></div>
@@ -24,9 +24,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../scss/_variables.scss';
 li.elem {
   list-style-type: none;
-  background-color: #DEDEDE;
+  background-color: $white-soft-color;
   padding: 1em 1.8em;
   h3 {
     font-size: 2em;

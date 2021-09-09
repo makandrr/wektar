@@ -1,10 +1,10 @@
 <template>
-  <li class="elem">
+  <li class="elem block-list-element">
     <div class="preview">
       <h3><span class="number">БЛОК {{ number }}</span> <span class="name">{{ name }}</span></h3>
       <div class="right">
         <div class="open" @click="$router.push(topicname)"><img src="../assets/icons/play.svg" alt="Открыть"></div>
-        <img class="expand" src="../assets/icons/leftBlack.svg" alt="Развернуть" @click="toggle" :style="{transform: isOpened ? 'rotate(90deg)' : 'rotate(-90deg)'}">
+        <svg class="expand" alt="Развернуть" @click="toggle" :style="{transform: isOpened ? 'rotate(90deg)' : 'rotate(-90deg)'}" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12l4.58-4.59z"/></svg>
       </div>
     </div>
     <div class="full" v-if="isOpened">
@@ -87,6 +87,7 @@ export default {
     .expand {
       margin-left: .15em;
       width: 3.7em;
+      height: 3.7em;
       transition: 200ms all;
       cursor: default;
       user-select: none;

@@ -1,5 +1,5 @@
 <template>
-  <div class="block" ref="blockContainer">
+  <div class="block block-choose-block" ref="blockContainer">
     <h3><span class="id">БЛОК {{ number }}</span> <span class="name">{{ name }}</span></h3>
     <p class="description">{{ description }}</p>
     <ul class="topic-list">
@@ -44,11 +44,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  @import '../scss/variables';
   .block {
-    background-color: #DEDEDE;
-    padding: 41px 37px;
-    width: 788px;
-    height: 530px;
+    background-color: $white-soft-color;
+    padding: 2em;
+    width: 38.5em;
+    height: 25.5em;
     font-size: 1.3rem;
     display: flex;
     flex-direction: column;
@@ -77,24 +78,8 @@ export default {
     .center-button {
       display: flex;
       justify-content: center;
-      padding-top: 40px;
+      padding-top: 1em;
       margin-top: auto;
-    }
-  }
-
-  @media (max-width: 995px) {
-    .block {
-      width: 600px;
-      height: 430px;
-      font-size: 1rem;
-    }
-  }
-
-  @media (max-width: 750px) {
-    .block {
-      width: 450px;
-      font-size: 0.8rem;
-      height: 380px;
     }
   }
 </style>

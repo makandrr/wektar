@@ -1,12 +1,12 @@
 <template>
-  <div class="container">
+  <div class="container" id="step-container">
     <div class="amounter" v-if="ismulti">
-      <img src="../../assets/icons/leftBlack.svg" alt="Назад" @click="$emit('prevmulti')">
+      <svg alt="Назад" class="amounter-button" @click="$emit('prevmulti')" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12l4.58-4.59z"/></svg>
       <span>{{ multistepnumber }} / {{ multiamount }}</span>
-      <img src="../../assets/icons/rightBlack.svg" alt="Вперёд" @click="$emit('nextmulti')">
+      <svg alt="Вперёд" class="amounter-button" @click="$emit('nextmulti')" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"/></svg>
     </div>
-    <article-step v-if="type === 'article'" :data="data" @next="$emit('next')" :islast="islast"></article-step>
-    <task-step v-if="type === 'task'" :data="data" @next="$emit('next')" :islast="islast" :key="taskkey"></task-step>
+    <article-step v-if="type === 'article'" :data="data" @next="$emit('next')" :islast="islast" :key="stepkey"></article-step>
+    <task-step v-if="type === 'task'" :data="data" @next="$emit('next')" :islast="islast" :key="stepkey"></task-step>
   </div>
 </template>
 
@@ -22,15 +22,16 @@ export default {
     ismulti: Boolean,
     multiamount: Number,
     multistepnumber: Number,
-    taskkey: Number
+    stepkey: Number
   },
   emits: ['nextmulti', 'prevmulti']
 }
 </script>
 
 <style lang="scss" scoped>
+  @import '../../scss/variables';
   .container {
-    background-color: #DEDEDE;
+    background-color: $white-soft-color;
     padding: 3em 1.6em 2.5em 1.6em;
     position: relative;
     .amounter {
@@ -43,9 +44,10 @@ export default {
       span {
         margin: 0 .3em;
       }
-      img {
+      svg {
         cursor: pointer;
         transition: 100ms all;
+        fill: #000;
         &:hover {
           opacity: 0.7;
         }

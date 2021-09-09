@@ -4,7 +4,7 @@
     <choose-card @clicked="goToLearning" icon="learn" type="learn">Учиться</choose-card>
     <strong class="or-label">ИЛИ</strong>
     <choose-card icon="practice" type="practice" sublabel="[В РАЗРАБОТКЕ]" disabled="true">Практиковаться</choose-card>
-    <span class="version">0.0.1c alpha1</span>
+    <span class="version">0.0.2 alpha1</span>
   </div>
 </template>
 
@@ -33,7 +33,7 @@ export default {
     background: linear-gradient(256.29deg, $practice-color 4.76%, $learn-color 94.34%);
     padding: $vertical-padding $horizontal-padding;
     .logo {
-      width: 200px;
+      width: 15em;
     }
     user-select: none;
   }
@@ -57,11 +57,14 @@ export default {
     left: 50%;
     text-align: center;
     transform: translate(-50%, -50%);
-    font-size: 50px;
+    font-size: 5em;
     color: #fff;
   }
 
-  @media(max-width: 850px) {
+  @media (max-width: 850px) {
+    .or-label {
+      font-size: 10em;
+    }
     .main {
       display: flex;
       flex-direction: column;
@@ -69,13 +72,14 @@ export default {
       background-image: linear-gradient(0deg, $practice-color 4.76%, $learn-color 94.34%);
       padding: $vertical-padding 0;
       .logo {
-        margin-bottom: 50px;
+        margin-bottom: 10em;
+        width: 35em;
       }
     }
     .or-label {
       position: static;
       transform: none;
-      margin: 20px 0;
+      margin: .6em 0;
     }
     .version {
       position: static;

@@ -1,5 +1,6 @@
 <template>
-  <div class="lesson">
+  <div class="lesson" id="lesson">
+    <dark-mode-toggle @click="generateNewStepKey"></dark-mode-toggle>
     <div class="stepList">
       <step-button
         v-for="(step, index) in steps"
@@ -7,7 +8,7 @@
         :type="step.type"
         :active="index === currentStepId"
         :amount="step.multi ? step.content.length : ''"
-        @click="switchToStep(index); generateNewTaskKey()"
+        @click="switchToStep(index); generateNewStepKey()"
       ></step-button>
     </div>
     <div class="step-container">
@@ -19,7 +20,7 @@
         :ismulti="isMultiStep"
         :multiamount="multiStepAmount"
         :multistepnumber="multiStepId + 1"
-        :taskkey="reRenderTaskKey"
+        :stepkey="reRenderStepKey"
         @nextmulti="nextMultiStep()"
         @prevmulti="prevMultiStep()"
       ></step>
@@ -30,15 +31,16 @@
 <script>
 import StepButton from '../components/StepButton'
 import Step from '../components/Steper/Step'
+import DarkModeToggle from '../components/DarkModeToggle'
 
 export default {
-  components: { Step, StepButton },
+  components: { Step, StepButton, DarkModeToggle },
   data () {
     return {
       steps: this.getSteps().steps,
       currentStepId: 0,
       multiStepId: 0,
-      reRenderTaskKey: 1
+      reRenderStepKey: 1
     }
   },
   mounted () {
@@ -61,15 +63,15 @@ export default {
         return this.$store.state.basics.content['1']
       }
     },
-    generateNewTaskKey () {
-      this.reRenderTaskKey = Math.random()
+    generateNewStepKey () {
+      this.reRenderStepKey = Math.random()
       console.log('generate')
     },
     nextMultiStep () {
       if (this.multiStepId + 1 !== this.multiStepAmount) {
         this.multiStepId++
         this.$router.replace({ query: { currentStepId: this.currentStepId, multiStepId: this.multiStepId } })
-        this.generateNewTaskKey()
+        this.generateNewStepKey()
         window.scrollTo(0, 0)
       }
     },
@@ -77,18 +79,18 @@ export default {
       if (this.multiStepId !== 0) {
         this.multiStepId--
         this.$router.replace({ query: { currentStepId: this.currentStepId, multiStepId: this.multiStepId } })
-        this.generateNewTaskKey()
+        this.generateNewStepKey()
         window.scrollTo(0, 0)
       }
     },
     generalNextStep () {
       if (this.isMultiStep && this.multiStepId + 1 < this.multiStepAmount) {
         this.nextMultiStep()
-        this.generateNewTaskKey()
+        this.generateNewStepKey()
         window.scrollTo(0, 0)
       } else {
         this.currentStepId++
-        this.generateNewTaskKey()
+        this.generateNewStepKey()
         this.multiStepId = 0
         window.scrollTo(0, 0)
       }

@@ -18,8 +18,9 @@ import QButtonIcon from '../../QButtonIcon'
 import Margin from '../Elements/Margin'
 import RealLineOutput from '../Elements/Outputs/RealLineOutput'
 import IntervalOutput from '../Elements/Outputs/IntervalOutput'
+import MiniQuestion from '../Elements/Outputs/MiniQuestion'
 export default {
-  components: { MainTitle, RealLineOutput, Margin, SubTitle, Text, List, Image, QButtonIcon, IntervalOutput },
+  components: { MainTitle, RealLineOutput, Margin, SubTitle, Text, List, Image, QButtonIcon, IntervalOutput, MiniQuestion },
   data () {
     return {
       rightIcon

@@ -36,6 +36,10 @@ export default {
     let firstNumber
     let dashAmount
     const excluding = this.data.exclude || [false, false]
+    let labelsColor = '#333'
+    if (document.body.classList.contains('dark')) {
+      labelsColor = '#eee'
+    }
 
     if (Math.abs(interval[0]) === Math.abs(interval[1])) {
       firstNumber = interval[0] - Math.round(Math.abs(interval[0]) * 2 / 5)
@@ -63,7 +67,7 @@ export default {
         text.position = new paper.Point(newDash.position.x, newDash.position.y + 15)
         text.style = {
           fontSize: 14,
-          fillColor: '#444'
+          fillColor: labelsColor
         }
         newDash.fillColor = '#000'
       }
@@ -91,7 +95,7 @@ export default {
       const label1 = new paper.PointText(new paper.Point(circle1.position.x, circle1.position.y))
       label1.content = intervalLabels[0]
       label1.position = new paper.Point(circle1.position.x - (label1.content.length * 7) / 20, circle1.position.y - 13)
-      label1.fillColor = '#444'
+      label1.fillColor = labelsColor
     }
     if (!infinitySides[1]) {
       circle2 = new paper.Path.Circle(new paper.Point(d2point, topPadding + 2), 4)
@@ -104,7 +108,7 @@ export default {
       const label2 = new paper.PointText(new paper.Point(circle2.position.x, circle2.position.y))
       label2.content = intervalLabels[1]
       label2.position = new paper.Point(circle2.position.x - (label2.content.length * 7) / 20, circle2.position.y - 13)
-      label2.fillColor = '#444'
+      label2.fillColor = labelsColor
     }
     const arrow = new paper.Raster('realLineArrow')
     arrow.position = paper.view.center

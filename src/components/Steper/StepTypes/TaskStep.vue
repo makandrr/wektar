@@ -23,7 +23,7 @@
       ></component>
     </div>
     <div class="bottom">
-      <q-button @click="checkClicked = !data.correctAnswer; showAnswerClicked = !showAnswerClicked; checkCorrect()" color="blue">{{ data.correctAnswer ? (showAnswerClicked ? 'Скрыть ответ' : 'Показать ответ') : 'Проверить' }}</q-button>
+      <q-button @click="checkClicked = !data.correctAnswer; showAnswerClicked = !showAnswerClicked; checkCorrect()" color="blue">{{ data.correctAnswer ? (showAnswerClicked ? 'Скрыть решение' : 'Показать решение') : 'Проверить' }}</q-button>
       <span :class="!isCorrect ? 'wrong' : ''" v-show="checkClicked">{{ isCorrect ? 'Верно' : 'Неверно' }}</span>
       <q-button-icon :icon="iconRight" v-if="!islast" @click="$emit('next')">Далее</q-button-icon>
     </div>

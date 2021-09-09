@@ -64,7 +64,7 @@ export default {
   }
 
   .label {
-    padding-bottom: 30px;
+    padding-bottom: 2.5em;
     text-align: center;
     h2, h3 {
       font-weight: 500;
@@ -72,7 +72,7 @@ export default {
     }
 
     h3 {
-      margin-top: 10px;
+      margin-top: .6em;
       color: #C3D1FF;
     }
   }

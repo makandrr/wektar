@@ -1,5 +1,6 @@
 <template>
-  <div class="block-choose-list">
+  <dark-mode-toggle></dark-mode-toggle>
+  <div class="topic-choose-list">
     <h2>{{ getBlock().name }}</h2>
     <ul>
       <topic-choose-element :blockname="getBlock().pageName" :key="index" v-for="(topic, index) in topics" :number="index" :name="topic.name"></topic-choose-element>
@@ -9,9 +10,10 @@
 
 <script>
 import TopicChooseElement from '../components/TopicChooseElement'
+import DarkModeToggle from '../components/DarkModeToggle'
 export default {
   name: 'TopicChoose',
-  components: { TopicChooseElement },
+  components: { TopicChooseElement, DarkModeToggle },
   data () {
     return {
       topics: this.getBlock().content
@@ -33,7 +35,7 @@ export default {
 <style scoped lang="scss">
 @import "../scss/variables";
 
-.block-choose-list {
+.topic-choose-list {
   padding: $pages-vertical-padding $pages-horizontal-padding;
   background-color: $learn-color;
   flex: 1;
@@ -51,7 +53,8 @@ export default {
   }
   ul {
     margin-top: 3em;
-    max-width: 1000px;
+    max-width: 70em;
+    min-width: 50em;
     margin-left: auto;
     margin-right: auto;
     li + li {
