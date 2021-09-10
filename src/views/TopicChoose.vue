@@ -1,4 +1,5 @@
 <template>
+  <q-button-back></q-button-back>
   <dark-mode-toggle></dark-mode-toggle>
   <div class="topic-choose-list">
     <h2>{{ getBlock().name }}</h2>
@@ -11,9 +12,10 @@
 <script>
 import TopicChooseElement from '../components/TopicChooseElement'
 import DarkModeToggle from '../components/DarkModeToggle'
+import QButtonBack from '../components/QButtonBack'
 export default {
   name: 'TopicChoose',
-  components: { TopicChooseElement, DarkModeToggle },
+  components: { QButtonBack, TopicChooseElement, DarkModeToggle },
   data () {
     return {
       topics: this.getBlock().content
@@ -64,7 +66,7 @@ export default {
 }
 
 @media (max-width: 900px) {
-  .block-choose-list {
+  .topic-choose-list {
     padding: $pages-vertical-padding / 3 $pages-horizontal-padding / 3;
   }
 }

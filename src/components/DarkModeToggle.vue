@@ -40,12 +40,18 @@ export default {
 
 <style scoped lang="scss">
   img {
-    width: 3em;
+    width: 3rem;
     transition: 150ms all;
     user-select: none;
     &:active {
       transform: scale(0.7);
       opacity: 0.3;
+    }
+    @media (max-width: 900px) {
+      width: 6rem;
+    }
+    @media (max-width: 480px) {
+      width: 9rem;
     }
   }
   div.fs {

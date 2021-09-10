@@ -1,4 +1,5 @@
 <template>
+  <q-button-back></q-button-back>
   <DarkModeToggle></DarkModeToggle>
   <div class="block-choose-list">
     <h2>Выберите блок</h2>
@@ -19,9 +20,10 @@
 <script>
 import BlockListElement from '../components/BlockListElement'
 import DarkModeToggle from '../components/DarkModeToggle'
+import QButtonBack from '../components/QButtonBack'
 export default {
   name: 'BlockChooseList',
-  components: { BlockListElement, DarkModeToggle },
+  components: { QButtonBack, BlockListElement, DarkModeToggle },
   data () {
     return {
       blocks: [

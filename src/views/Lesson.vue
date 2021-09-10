@@ -1,4 +1,5 @@
 <template>
+  <q-button-back></q-button-back>
   <div class="lesson" id="lesson">
     <dark-mode-toggle @click="generateNewStepKey"></dark-mode-toggle>
     <div class="stepList">
@@ -32,9 +33,10 @@
 import StepButton from '../components/StepButton'
 import Step from '../components/Steper/Step'
 import DarkModeToggle from '../components/DarkModeToggle'
+import QButtonBack from '../components/QButtonBack'
 
 export default {
-  components: { Step, StepButton, DarkModeToggle },
+  components: { QButtonBack, Step, StepButton, DarkModeToggle },
   data () {
     return {
       steps: this.getSteps().steps,
@@ -167,27 +169,23 @@ export default {
     padding: $pages-vertical-padding 20%;
 
     @media (max-width: 820px) {
-      padding: $pages-vertical-padding 10%;
+      padding: $pages-vertical-padding + 20px 10%;
       font-size: 1.7em;
     }
 
     @media (max-width: 554px) {
-      padding: $pages-vertical-padding 5%;
+      padding: $pages-vertical-padding + 30px 5%;
       font-size: 3.1em;
     }
 
     @media (max-width: 418px) {
-      padding: $pages-vertical-padding 3%;
+      padding: $pages-vertical-padding + 30px 3%;
     }
 
     .stepList {
-      display: flex;
-      flex-wrap: wrap;
-      & > * {
-        flex-shrink: 0;
-        margin-right: 8px;
-        margin-top: 8px;
-      }
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(3.2em, 1fr));
+      grid-gap: .5em;
     }
 
     .step-container {

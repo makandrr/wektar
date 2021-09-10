@@ -1,4 +1,5 @@
 <template>
+  <q-button-back></q-button-back>
   <DarkModeToggle></DarkModeToggle>
   <div class="block-choose">
     <h2>Выберите блок</h2>
@@ -29,8 +30,9 @@
 <script>
 import BlocksChooseBlock from '../components/BlocksChooseBlock'
 import DarkModeToggle from '../components/DarkModeToggle'
+import QButtonBack from '../components/QButtonBack'
 export default {
-  components: { BlocksChooseBlock, DarkModeToggle },
+  components: { QButtonBack, BlocksChooseBlock, DarkModeToggle },
   mounted () {
     document.documentElement.classList.add('overflow-hide')
 
