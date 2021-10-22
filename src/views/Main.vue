@@ -1,10 +1,10 @@
 <template>
   <div class="main">
-    <img src="../assets/logo.svg" alt="Quarta" class="logo">
+    <img src="../assets/logo.svg" alt="Wektar" class="logo">
     <choose-card @clicked="goToLearning" icon="learn" type="learn">Учиться</choose-card>
     <strong class="or-label">ИЛИ</strong>
     <choose-card icon="practice" type="practice" sublabel="[В РАЗРАБОТКЕ]" disabled="true">Практиковаться</choose-card>
-    <span class="version">0.0.2b alpha1</span>
+    <span class="version">0.0.3 alpha1</span>
   </div>
 </template>
 

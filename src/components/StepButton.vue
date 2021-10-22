@@ -51,7 +51,8 @@ export default {
       position: absolute;
       top: .05em;
       right: .2em;
-      font-size: 0.8em;
+      font-size: 0.7em;
+      font-weight: 500;
       color: #fff;
     }
   }

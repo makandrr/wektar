@@ -1,9 +1,11 @@
 <template>
-  <h1>Попробуйте ответить самостоятельно</h1>
-  <div class="container">
-    <p class="question">{{ data.question }}</p>
-    <p class="answer" v-if="clicked">{{ data.answer }}</p>
-    <q-button color="green" @click="clicked = true" v-if="!clicked">Показать ответ</q-button>
+  <div class="mini-question">
+    <h1>Мини-задача</h1>
+    <div class="container">
+      <p class="question">{{ data.question }}</p>
+      <p class="answer" v-if="clicked">{{ data.answer }}</p>
+      <q-button color="green" @click="clicked = true" v-if="!clicked">Показать ответ</q-button>
+    </div>
   </div>
 </template>
 

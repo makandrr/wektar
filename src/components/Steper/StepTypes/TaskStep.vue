@@ -8,10 +8,10 @@
       @interact="checkClicked = false"
       @set-data-key="setTaskDataKey"
     ></component>
-    <p v-if="showAnswerClicked && data.correctAnswer !== 'object'">
+    <div v-if="showAnswerClicked && data.correctAnswer !== 'object'" class="answer answer-oneline">
       {{ typeof data.correctAnswer !== 'object' ? data.correctAnswer : '' }}
-    </p>
-    <div v-if="Array.isArray(data.correctAnswer) && showAnswerClicked">
+    </div>
+    <div v-if="Array.isArray(data.correctAnswer) && showAnswerClicked" class="answer">
       <component
         :tdata="{ ...getData() }"
         v-for="(element, index) in data.correctAnswer"
@@ -124,5 +124,11 @@ export default {
         color: #BA0021;
       }
     }
+  }
+  .answer {
+    border-top: .1em solid $learn-color;
+  }
+  .answer-oneline {
+    border-top: .2em solid $learn-color;
   }
 </style>
