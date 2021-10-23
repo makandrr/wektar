@@ -8,7 +8,7 @@
       @interact="checkClicked = false"
       @set-data-key="setTaskDataKey"
     ></component>
-    <div v-if="showAnswerClicked && data.correctAnswer !== 'object'" class="answer answer-oneline">
+    <div v-if="showAnswerClicked && typeof data.correctAnswer === 'string'" class="answer">
       {{ typeof data.correctAnswer !== 'object' ? data.correctAnswer : '' }}
     </div>
     <div v-if="Array.isArray(data.correctAnswer) && showAnswerClicked" class="answer">
@@ -79,25 +79,22 @@ export default {
     },
     checkCorrect () {
       for (const key of Object.keys(this.$data)) {
-        if (this.data.correctData[key] || this.data.correctData[key] === false || this.data.correctData[key] === 0) {
-          if (typeof this.data.correctData[key] === 'object') {
-            if (!this.data.correctData[key].test(this.$data[key])) {
-              console.log('regexp wrong!')
-              this.isCorrect = false
-              return false
-            }
-          } else {
-            if (this.$data[key] !== this.data.correctData[key]) {
-              console.log(this.$data[key])
-              console.log(this.data.correctData[key])
-              console.log('correctanswer wrong', `${this.$data[key]} !== ${this.data.correctData[key]}`)
-              this.isCorrect = false
-              return false
+        if (this.data.correctData) {
+          if (this.data.correctData[key] || this.data.correctData[key] === false || this.data.correctData[key] === 0) {
+            if (typeof this.data.correctData[key] === 'object') {
+              if (!this.data.correctData[key].test(this.$data[key])) {
+                this.isCorrect = false
+                return false
+              }
+            } else {
+              if (this.$data[key] !== this.data.correctData[key]) {
+                this.isCorrect = false
+                return false
+              }
             }
           }
         }
       }
-      console.log('isCorrect')
       this.isCorrect = true
       return true
     }
@@ -126,9 +123,6 @@ export default {
     }
   }
   .answer {
-    border-top: .1em solid $learn-color;
-  }
-  .answer-oneline {
     border-top: .2em solid $learn-color;
   }
 </style>

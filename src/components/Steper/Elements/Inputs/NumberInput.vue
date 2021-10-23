@@ -25,7 +25,6 @@ export default {
     },
     setInputValue (string) {
       this.$refs.input.value = string.replace(/[^0-9\-.,]/g, '')
-      console.log('setted')
     }
   }
 }

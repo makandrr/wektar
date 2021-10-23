@@ -51,7 +51,6 @@ export default {
       clickableCircle.fillColor = '#ffffff01'
       clickableCircle.onClick = () => {
         if (lastShowedCircle) lastShowedCircle.fillColor = '#0000'
-        console.log('clicked', firstNumber + ((i - 1) * step))
         showCircle.fillColor = '#0a5415'
         lastShowedCircle = showCircle
       }

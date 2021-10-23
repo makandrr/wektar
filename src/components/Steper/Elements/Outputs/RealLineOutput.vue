@@ -66,7 +66,6 @@ export default {
       newDash.fillColor = dashColor
     }
     for (const value of pointedValues) {
-      console.log('value')
       const d = ((Math.abs(value.value - (firstNumber - step))) / step) * spacingBetweenDashs + leftPadding
       const circle = new paper.Path.Circle(new paper.Point(d, topPadding + 2), 4)
       circle.fillColor = dotColor

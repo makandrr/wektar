@@ -46,7 +46,6 @@ export default {
     }
   },
   mounted () {
-    // console.log({ currentStepId: this.stepIdFromURL, multiStepId: this.multiStepIdFromURL })
     this.$router.replace({ query: { currentStepId: this.stepIdFromURL, multiStepId: this.multiStepIdFromURL } })
     this.currentStepId = this.stepIdFromURL
     this.multiStepId = this.multiStepIdFromURL
@@ -67,7 +66,6 @@ export default {
     },
     generateNewStepKey () {
       this.reRenderStepKey = Math.random()
-      console.log('generate')
     },
     nextMultiStep () {
       if (this.multiStepId + 1 !== this.multiStepAmount) {
