@@ -7,6 +7,11 @@ export default {
   props: {
     data: String
   },
+  data () {
+    return {
+      mathExp: false
+    }
+  },
   computed: {
     formattedText () {
       let text = this.data
@@ -14,6 +19,11 @@ export default {
       text = text.replace(/\[s\]/g, '<strong>')
       text = text.replace(/\[\/s\]/g, '</strong>')
       return text
+    }
+  },
+  mounted () {
+    if (/^\$\$.*\$\$$/.test(this.data)) {
+      this.mathExp = true
     }
   }
 }

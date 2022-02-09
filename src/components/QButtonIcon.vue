@@ -4,13 +4,16 @@
       <slot />
     </div>
     <img :src="icon" alt="next">
+    <div class="shortcut" v-if="shortcut">
+      {{ shortcut }}
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'QButton',
-  props: ['color', 'icon'],
+  props: ['color', 'icon', 'shortcut'],
   emits: ['click']
 }
 </script>
@@ -51,5 +54,16 @@ button.blue {
   &:hover {
     background-color: lighten($glow-button-color, 2%);
   }
+}
+
+.shortcut {
+  font-size: 1.2em;
+  background: rgba(0,0,0,0.2);
+  width: 1.5em;
+  height: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15%;
 }
 </style>

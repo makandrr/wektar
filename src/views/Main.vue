@@ -1,10 +1,10 @@
 <template>
   <div class="main">
     <img src="../assets/logo.svg" alt="Wektar" class="logo">
-    <choose-card @clicked="goToLearning" icon="learn" type="learn">Учиться</choose-card>
+    <choose-card shortcut="1" @clicked="goToLearning" icon="learn" type="learn">Учиться</choose-card>
     <strong class="or-label">ИЛИ</strong>
     <choose-card icon="practice" type="practice" sublabel="[В РАЗРАБОТКЕ]" disabled="true">Практиковаться</choose-card>
-    <span class="version">0.0.4 alpha1</span>
+    <span class="version">0.0.5 alpha1</span>
   </div>
 </template>
 
@@ -19,7 +19,20 @@ export default {
   methods: {
     goToLearning () {
       this.$router.push('blocks')
+    },
+    shortcutsHandler (e) {
+      if (e.key === '1') {
+        this.goToLearning()
+      }
     }
+  },
+  mounted () {
+    console.log('mounted')
+    document.addEventListener('keypress', this.shortcutsHandler)
+  },
+  unmounted () {
+    console.log('unmounted')
+    document.addEventListener('keypress', this.shortcutsHandler)
   }
 }
 </script>
@@ -43,12 +56,11 @@ export default {
     right: 0;
     bottom: 0;
     color: #fff;
-    font-size: 1.2em;
-    border-top: 3px solid #ba8787;
-    border-left: 3px solid #ba8787;
+    font-size: 1.1em;
     padding: .3em;
     user-select: none;
-    background-color: rgba(0,0,0,0.5);
+    font-family: monospace;
+    text-align: right;
   }
 
   .or-label {

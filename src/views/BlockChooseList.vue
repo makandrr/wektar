@@ -35,6 +35,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  @use 'sass:math';
   @import "../scss/variables";
 
   .block-choose-list {
@@ -68,7 +69,7 @@ export default {
 
   @media (max-width: 900px) {
     .block-choose-list {
-      padding: $pages-vertical-padding / 3 $pages-horizontal-padding / 3;
+      padding: math.div($pages-vertical-padding, 3) math.div($pages-horizontal-padding, 3);
     }
   }
 </style>

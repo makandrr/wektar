@@ -1,6 +1,7 @@
 <template>
   <q-button-back></q-button-back>
   <dark-mode-toggle></dark-mode-toggle>
+  <shortcuts-show-toggle></shortcuts-show-toggle>
   <div class="topic-choose-list">
     <h2>{{ getBlock().name }}</h2>
     <ul>
@@ -13,9 +14,10 @@
 import TopicChooseElement from '../components/TopicChooseElement'
 import DarkModeToggle from '../components/DarkModeToggle'
 import QButtonBack from '../components/QButtonBack'
+import ShortcutsShowToggle from '../components/ShortcutsShowToggle'
 export default {
   name: 'TopicChoose',
-  components: { QButtonBack, TopicChooseElement, DarkModeToggle },
+  components: { QButtonBack, TopicChooseElement, DarkModeToggle, ShortcutsShowToggle },
   data () {
     return {
       topics: this.getBlock().content
@@ -35,6 +37,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@use 'sass:math';
 @import "../scss/variables";
 
 .topic-choose-list {
@@ -67,7 +70,7 @@ export default {
 
 @media (max-width: 900px) {
   .topic-choose-list {
-    padding: $pages-vertical-padding / 3 $pages-horizontal-padding / 3;
+    padding: math.div($pages-vertical-padding, 3) math.div($pages-horizontal-padding, 3);
   }
 }
 </style>

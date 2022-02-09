@@ -1,5 +1,6 @@
 <template>
   <div class="card" :class="[type, disabled ? 'disabled' : '']" @click="$emit('clicked')">
+    <div v-if="shortcut" class="shortcut">{{ shortcut }}</div>
     <img :src="getIconPath" class="icon" :alt="icon">
     <div class="label">
       <h2><slot /></h2>
@@ -15,7 +16,7 @@ import practiceIcon from '../assets/icons/pracitce_icon.svg'
 export default {
   emits: ['clicked'],
   name: 'ChooseCard',
-  props: ['icon', 'type', 'sublabel', 'disabled'],
+  props: ['icon', 'type', 'sublabel', 'disabled', 'shortcut'],
   computed: {
     getIconPath () {
       const iconNames = {
@@ -42,6 +43,19 @@ export default {
     align-items: center;
     color: #fff;
     cursor: pointer;
+    .shortcut {
+      position: absolute;
+      top: .6em;
+      right: .6em;
+      font-size: 1.2em;
+      background: rgba(0,0,0,0.2);
+      width: 1.5em;
+      height: 1.5em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 15%;
+    }
     .icon {
       width: 15em;
     }

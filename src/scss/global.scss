@@ -8,6 +8,22 @@
   box-sizing: border-box;
 }
 
+.MathJax {
+  transition: 300ms all;
+  animation: ease-in-out math 1.5s;
+}
+
+@keyframes math {
+  0% {
+    opacity: 0;
+    color: lime;
+  }
+  100% {
+    opacity: 1;
+    color: inherit;
+  }
+}
+
 html {
   min-height: 100vh;
   font-family: $main-font;
@@ -116,4 +132,11 @@ body.dark {
 .title-q strong {
   color: #20B240;
   font-weight: inherit;
+}
+
+body:not(.shortcut) .shortcut {
+  display: none;
+}
+body.shortcuts .shortcut {
+  display: flex;
 }

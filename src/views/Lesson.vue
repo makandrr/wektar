@@ -2,6 +2,7 @@
   <q-button-back></q-button-back>
   <div class="lesson" id="lesson">
     <dark-mode-toggle @click="generateNewStepKey"></dark-mode-toggle>
+    <shortcuts-show-toggle></shortcuts-show-toggle>
     <div class="stepList">
       <step-button
         v-for="(step, index) in steps"
@@ -33,10 +34,11 @@
 import StepButton from '../components/StepButton'
 import Step from '../components/Steper/Step'
 import DarkModeToggle from '../components/DarkModeToggle'
+import ShortcutsShowToggle from '../components/ShortcutsShowToggle'
 import QButtonBack from '../components/QButtonBack'
 
 export default {
-  components: { QButtonBack, Step, StepButton, DarkModeToggle },
+  components: { QButtonBack, Step, StepButton, DarkModeToggle, ShortcutsShowToggle },
   data () {
     return {
       steps: this.getSteps().steps,
@@ -49,6 +51,7 @@ export default {
     this.$router.replace({ query: { currentStepId: this.stepIdFromURL, multiStepId: this.multiStepIdFromURL } })
     this.currentStepId = this.stepIdFromURL
     this.multiStepId = this.multiStepIdFromURL
+    document.addEventListener('keypress', this.shortcutsHandler)
   },
   methods: {
     getSteps () {
@@ -62,6 +65,11 @@ export default {
       } else {
         this.$router.replace('/blocks')
         return this.$store.state.basics.content['1']
+      }
+    },
+    shortcutsHandler (e) {
+      if (e.code === 'Digit1') {
+        this.generalNextStep()
       }
     },
     generateNewStepKey () {

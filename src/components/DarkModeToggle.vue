@@ -22,7 +22,7 @@ export default {
       document.body.classList.add('dark')
       this.isDark = true
     } else {
-      localStorage.setItem('key', '0')
+      localStorage.setItem('dark', '0')
       document.body.classList.remove('dark')
       this.isDark = false
     }

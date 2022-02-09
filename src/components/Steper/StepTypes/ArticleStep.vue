@@ -2,7 +2,7 @@
   <div>
     <component v-for="(element, index) in data.content" :key="index" :is="element.type" :data="element.content"></component>
     <div class="buttonContainer">
-      <q-button-icon :icon="rightIcon" @click="$emit('next')" v-if="!islast">Далее</q-button-icon>
+      <q-button-icon :icon="rightIcon" @click="$emit('next')" shortcut="1" v-if="!islast">Далее</q-button-icon>
     </div>
   </div>
 </template>
@@ -19,6 +19,7 @@ import Margin from '../Elements/Margin'
 import RealLineOutput from '../Elements/Outputs/RealLineOutput'
 import IntervalOutput from '../Elements/Outputs/IntervalOutput'
 import MiniQuestion from '../Elements/Outputs/MiniQuestion'
+
 export default {
   components: { MainTitle, RealLineOutput, Margin, SubTitle, Text, List, Image, QButtonIcon, IntervalOutput, MiniQuestion },
   data () {
@@ -27,7 +28,11 @@ export default {
     }
   },
   props: ['data', 'islast'],
-  emits: ['next']
+  emits: ['next'],
+  mounted () {
+    const mj = window.MathJax
+    window.MathJax.Hub.Queue(['Typeset', mj.Hub])
+  }
 }
 </script>
 

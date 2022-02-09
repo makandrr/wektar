@@ -25,7 +25,7 @@
     <div class="bottom">
       <q-button @click="checkClicked = !data.correctAnswer; showAnswerClicked = !showAnswerClicked; checkCorrect()" color="blue">{{ data.correctAnswer ? (showAnswerClicked ? 'Скрыть решение' : 'Показать решение') : 'Проверить' }}</q-button>
       <span :class="!isCorrect ? 'wrong' : ''" v-show="checkClicked">{{ isCorrect ? 'Верно' : 'Неверно' }}</span>
-      <q-button-icon :icon="iconRight" v-if="!islast" @click="$emit('next')">Далее</q-button-icon>
+      <q-button-icon :icon="iconRight" v-if="!islast" @click="$emit('next')" shortcut="1">Далее</q-button-icon>
     </div>
   </div>
 </template>
@@ -52,10 +52,10 @@ import IntervalOutput from '../Elements/Outputs/IntervalOutput'
 import PointInput from '../Elements/Inputs/PointInput'
 
 // TODO: Stop it on load script MathJax
-setInterval(() => {
-  const mj = window.MathJax
-  window.MathJax.Hub.Queue(['Typeset', mj.Hub])
-}, 500)
+// setInterval(() => {
+//   const mj = window.MathJax
+//   window.MathJax.Hub.Queue(['Typeset', mj.Hub])
+// }, 500)
 
 export default {
   components: { QButton, Margin, IntervalOutput, PointInput, RealLineOutput, FractionInput, StringInput, SelectInput, ComparisonSignInput, MainTitle, SubTitle, Text, List, Image, NumberInput, ValueDisplay, QButtonIcon, TrueFalseStatement },
@@ -102,6 +102,11 @@ export default {
   mounted () {
     const mj = window.MathJax
     window.MathJax.Hub.Queue(['Typeset', mj.Hub])
+    setInterval(() => {
+      const mj = window.MathJax
+      window.MathJax.Hub.Queue(['Typeset', mj.Hub])
+      console.log('ren')
+    }, 400)
   }
 }
 </script>

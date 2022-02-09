@@ -3,8 +3,8 @@
     <h1>Мини-задача</h1>
     <div class="container">
       <p class="question">{{ data.question }}</p>
-      <p class="answer" v-if="clicked">{{ data.answer }}</p>
-      <q-button color="green" @click="clicked = true" v-if="!clicked">Показать ответ</q-button>
+      <p class="answer" v-if="opened">{{ data.answer }}</p>
+      <q-button color="green" @click="opened = !opened">{{ opened ? 'Скрыть ответ' : 'Показать ответ' }}</q-button>
     </div>
   </div>
 </template>
@@ -19,7 +19,7 @@ export default {
   },
   data () {
     return {
-      clicked: false
+      opened: false
     }
   }
 }
