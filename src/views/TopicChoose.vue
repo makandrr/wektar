@@ -1,7 +1,6 @@
 <template>
   <q-button-back></q-button-back>
   <dark-mode-toggle></dark-mode-toggle>
-  <shortcuts-show-toggle></shortcuts-show-toggle>
   <div class="topic-choose-list">
     <h2>{{ getBlock().name }}</h2>
     <ul>
@@ -14,10 +13,9 @@
 import TopicChooseElement from '../components/TopicChooseElement'
 import DarkModeToggle from '../components/DarkModeToggle'
 import QButtonBack from '../components/QButtonBack'
-import ShortcutsShowToggle from '../components/ShortcutsShowToggle'
 export default {
   name: 'TopicChoose',
-  components: { QButtonBack, TopicChooseElement, DarkModeToggle, ShortcutsShowToggle },
+  components: { QButtonBack, TopicChooseElement, DarkModeToggle },
   data () {
     return {
       topics: this.getBlock().content
